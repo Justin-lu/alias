@@ -2,7 +2,12 @@
 alias 'rsync-nanfang'="rsync -avrt --recursive --times --rsh=ssh --compress --human-readable --progress --delete deploy@thenanfang.com:/var/www/thenanfang.com/shared/public/uploads/ ~/beansmile/nanfang-web/public/uploads/"
 alias 'rsync-blog'="rsync -avrt --recursive --times --rsh=ssh --compress --human-readable --progress --delete deploy@thenanfang.com:/var/www/blog.thenanfang.com/shared/public/uploads/ ~/beansmile/nanfang-blog/wp-content/uploads/"
 alias 'mtr'='sudo /usr/local/sbin/mtr -r'
+alias 'reload-zshrc'='source ~/.zshrc'
 
+function upgrade-node {
+  sudo npm install n -g
+  sudo n stable
+}
 # toggle iTerm Dock icon
 function toggleiTerm() {
   pb='/usr/libexec/PlistBuddy'
