@@ -1,0 +1,78 @@
+alias rake="bundle exec rake"
+alias pro='RAILS_ENV=production'
+alias bi="bundle install"
+alias be="bundle exec"
+alias rs="be rails s"
+alias brs="be rspec"
+alias rgm="rails generate migration"
+
+alias re="be rake"
+alias rr="be rake routes"
+alias rake-migrate-db="re db:migrate"
+alias rake-rollback-db="re db:rollback"
+alias rake-create-db="re db:create"
+alias rake-seed-fu="re db:seed_fu"
+alias rake-drop-db="re db:drop"
+alias rake-time-zones="re time:zones:all"
+alias rake-assets-precomplie="RAILS_ENV=production rake assets:precompile"
+alias rake-assets-clean="rake assets:clean"
+alias rails-s-production='LOCAL_PRODUCTION=1 rails s -e production --debugger -p 3003 --pid=tmp/pids/server_production.pid'
+alias start-postgres='killall postgres; postgres -D /usr/local/var/postgres'
+
+alias 'sidekiq'='be sidekiq -d'
+alias 'bo'='bundle open'
+
+# usage: $ rails-diff 4.0.9 4.0.12
+function rails-diff {
+  local url="http://railsdiff.org/diff/v$1/v$2/"
+  open $url
+}
+
+function rails-g-scaffold-mvc-only {
+  # rails g scaffold admin/events city_id:integer --no-assets --no-helper --no-stylesheets --no-fixture --no-test-framework --no-migration
+  rails g scaffold $* --no-assets --no-helper --no-stylesheets --no-fixture --no-test-framework --no-migration
+  del app/models/admin/
+  del app/models/admin.rb
+}
+
+function rails-g-scaffold_controller {
+  # rails g scaffold_controller admin/events city_id:integer --no-assets --no-helper --no-stylesheets --no-fixture --no-test-framework
+  # rails g scaffold_controller admin/events city_id:integer --no-assets --no-helper --no-stylesheets --no-fixture --no-test-framework --skip-namespace
+  rails g scaffold_controller $* --no-assets --no-helper --no-stylesheets --no-fixture --no-test-framework
+}
+
+function rails-d-scaffold_controller {
+  rails d scaffold_controller $*
+}
+
+function rails-g-controller-only {
+  rails g controller $* --no-assets --no-helper --no-stylesheets --no-fixture --no-test-framework
+}
+
+function rails-g-model-only {
+  rails g model $* --no-fixture --no-test-framework
+}
+
+# Install specific version of Homebrew formula
+# usage example:
+# $ brew-install ssh-copy-id 6.0p1
+function brew-install {
+  local formula version formula_hash
+  formula=$1
+  version=$2
+
+  cd `brew --prefix`
+  git_last_commit_id=`git rev-parse --short HEAD`
+
+  formula_hash=`brew versions $formula|grep $version|awk '{print $4}'`
+
+  echo brew install $formula with version $version $formula_hash
+
+  git checkout $formula_hash Library/Formula/$formula.rb
+
+  brew install $formula
+  brew switch $formula $version
+  git checkout $git_last_commit_id Library/Formula/$formula.rb   # reset formula
+
+  cd - # got back to previous dir
+}

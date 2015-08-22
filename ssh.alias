@@ -1,0 +1,10 @@
+alias ssh_login="ssh -D 7070 justin_lu@v25.sshchina.com"
+alias ssh_vps="ssh root@162.243.40.234"
+alias vps="ssh root@162.243.234.214 -D 7070"
+alias ssh_justin="ssh justin@162.243.234.214"
+alias ssh_ce="ssh ce@hzuchanceeasy.vicp.cc"
+alias 'ssh-deploy'='ssh deploy@beansmile.com'
+alias 'ssh-deploy-play'='ssh deploy@play.beansmile.com'
+alias 'ssh-bs'='ssh deploy@play.beansmile.com -D 7070'
+alias 'ssh-jzy'='ssh xpgadmin@112.124.40.241'
+alias 'ssh-xxy-production'='ssh deploy@xiaoxinyi.net'

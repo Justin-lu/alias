@@ -1,0 +1,2 @@
+# tsc
+alias 'tsc'=t'tsc --watch -m commonjs -t es5 --emitDecoratorMetadata'

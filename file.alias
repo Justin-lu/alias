@@ -1,0 +1,20 @@
+# file shortcuts
+alias ruby-httpd='open http://localhost:5000; ruby -run -e httpd . -p 5000'
+alias cy="cd ~/Myself/chance_easy"
+alias bs="cd ~/beansmile"
+alias blog="cd ~/Myself/justin-lu.github.io"
+alias nanfang-web="cd ~/beansmile/nanfang-web"
+alias nanfang-webs="cd ~/beansmile/nanfang-web && rails s"
+alias nanfang-blog="cd ~/beansmile/nanfang-blog"
+alias ezitask="cd ~/beansmile/Ezitask/ezitask-source"
+alias ezitasks="ezitask && be rails s -p4000"
+alias ezitaskc="ezitask && be rails c"
+alias show_all_file="defaults write com.apple.finder AppleShowAllFiles -bool TRUE && killall Finder"
+alias hide_all_file="defaults write com.apple.finder AppleShowAllFiles -bool NO && killall Finder"
+#http serve
+alias ruby-httpd='open http://localhost:5000; ruby -run -e httpd . -p 5000'
+alias open-on-server='python -m SimpleHTTPServer'
+alias p-run='python runadmin.py'
+# work project
+alias open-ezitask="cd ~/beansmile/Ezitask/; subl ezitask.sublime-project; cd ezitask-source"
+alias open-jizhiyun="cd ~/beansmile/jizhiyun/; subl jizhiyun.sublime-project; cd gizwitsadmin"
