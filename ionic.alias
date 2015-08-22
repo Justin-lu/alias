@@ -1,3 +1,22 @@
+alias 'ionic-serve'='ionic serve -c -s'
+alias 'ionic-start-blank'=ionic-start-blank
+alias 'ionic-templates'='ionic templates'
+alias 'ionic-setup-sass '='ionic setup sass'
+alias 'ionic-build-ios '='ionic build ios'
+alias 'ionic-lib-update'='ionic lib update'
+alias 'ionic-browser-list'='ionic browser list'
 alias 'ionic-emulate'='ionic emulate ios --livereload'
+alias 'ionic-run-ios'='ionic run ios'
+alias 'ionic-run-ios-device'='ionic run ios --device'
 alias 'ionic-update-android'='ionic platform update android'
 alias 'ionic-update-ios'='ionic platform update ios'
+alias 'ionic-resources'='ionic resources'
+
+# --appname, -a  .......  Human readable name for the app
+#                         (Use quotes around the name)
+# --id, -i  ............  Package name set in the <widget id> config
+#                         ex: com.mycompany.myapp
+# --no-cordova, -w  ....  Do not create an app targeted for Cordova
+function ionic-start-blank {
+  ionic start $1 blank
+}
