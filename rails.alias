@@ -5,6 +5,7 @@ alias be="bundle exec"
 alias rs="be rails s"
 alias brs="be rspec"
 alias rgm="rails generate migration"
+alias cap='time bundle exec cap' # using bundle
 
 alias re="be rake"
 alias rr="be rake routes"
@@ -21,6 +22,7 @@ alias start-postgres='killall postgres; postgres -D /usr/local/var/postgres'
 
 alias 'sidekiq'='be sidekiq -d'
 alias 'bo'='bundle open'
+alias 'cap-deploy'='cap deploy:migrations'
 
 # usage: $ rails-diff 4.0.9 4.0.12
 function rails-diff {

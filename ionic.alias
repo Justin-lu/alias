@@ -1,8 +1,8 @@
 alias 'ionic-serve'='ionic serve -c -s'
 alias 'ionic-start-blank'=ionic-start-blank
 alias 'ionic-templates'='ionic templates'
-alias 'ionic-setup-sass '='ionic setup sass'
-alias 'ionic-build-ios '='ionic build ios'
+alias 'ionic-setup-sass'='ionic setup sass'
+alias 'ionic-build-ios'='ionic build ios'
 alias 'ionic-lib-update'='ionic lib update'
 alias 'ionic-browser-list'='ionic browser list'
 alias 'ionic-emulate'='ionic emulate ios --livereload'

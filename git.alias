@@ -13,6 +13,8 @@ alias 'git-delete-merged-branches'='git branch --merged | grep -v "\*" | grep -v
 alias 'git-delete-branches-merged-into-current'='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
 alias 'git-cancel-commit'='git reset --hard HEAD^' # 取消当前版本之前的两次提交
 alias 'git-push-force'='git push origin HEAD --force' # 强制提交到远程版本库，从而删除之前的两次提交数据
+alias 'git-pull-beansmile-master'='git pull beansmile master'
+alias 'git-push-jizhiyun-master'='git pull origin master'
 
 # usage example:
 # $ git-new-branch "56856748 daily statistics for count of leads for each sales_person"
@@ -26,7 +28,8 @@ function git-new-branch {
 
 function git-push-current-branch-to-remote {
   branch_name=`git-current-branch`
-  git push origin $branch_name
+  tn git push origin $branch_name
+  say Done
   git branch --set-upstream-to=origin/$branch_name $branch_name
 }
 

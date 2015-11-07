@@ -13,6 +13,7 @@ alias show_all_file="defaults write com.apple.finder AppleShowAllFiles -bool TRU
 alias hide_all_file="defaults write com.apple.finder AppleShowAllFiles -bool NO && killall Finder"
 #http serve
 alias ruby-httpd='open http://localhost:5000; ruby -run -e httpd . -p 5000'
+alias open-80-port='sudo ruby -run -e  httpd . -p 80'
 alias open-on-server='python -m SimpleHTTPServer'
 alias p-run='python runadmin.py'
 # work project
