@@ -1,0 +1,18 @@
+# Open npm package's github repository from cli
+# $ pkg-open mocha
+# opens => https://github.com/mochajs/mocha
+# npm install -g pkg-open
+# or npm install -g homepage
+# https://github.com/tunnckoCore/homepage
+
+alias npm-open-repo='pkg-open'
+
+# Opens the package folder in the default editor
+# $ npm edit ionic -g
+# https://docs.npmjs.com/cli/edit
+alias npm-open='npm edit'
+
+# npm install and also update npm-shrinkwrap.json
+function npm-install () {
+  npm install --save ${1} && npm shrinkwrap;
+}

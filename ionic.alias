@@ -11,6 +11,7 @@ alias 'ionic-run-ios-device'='ionic run ios --device'
 alias 'ionic-update-android'='ionic platform update android'
 alias 'ionic-update-ios'='ionic platform update ios'
 alias 'ionic-resources'='ionic resources'
+alias 'ionic-reset'='ionic state reset'
 
 # --appname, -a  .......  Human readable name for the app
 #                         (Use quotes around the name)

@@ -3,6 +3,16 @@ alias 'rsync-nanfang'="rsync -avrt --recursive --times --rsh=ssh --compress --hu
 alias 'rsync-blog'="rsync -avrt --recursive --times --rsh=ssh --compress --human-readable --progress --delete deploy@thenanfang.com:/var/www/blog.thenanfang.com/shared/public/uploads/ ~/beansmile/nanfang-blog/wp-content/uploads/"
 alias 'mtr'='sudo /usr/local/sbin/mtr -r'
 alias 'reload-zshrc'='source ~/.zshrc'
+alias 'vim'='/usr/local/Cellar/vim/7.4.1707/bin/vim'
+
+# trash is a small command-line program for OS X that moves files or folders to the trash.
+# trash is installed from `brew install trash`
+alias del='trash'
+
+# for linux netstat -plnt | grep ':80'
+function check-port {
+  lsof -n -i4TCP:$1 | grep LISTEN
+}
 
 function upgrade-node {
   sudo npm install n -g
@@ -90,3 +100,11 @@ function gitlab-send-merge-request {
   open "$gitlab_mr_url"
 }
 alias gitlab-send-merge-request-to-develop='gitlab-send-merge-request develop'
+alias gitlab-send-merge-request-to-dev='gitlab-send-merge-request dev'
+alias curl-with-gzip='curl -I -H "Accept-Encoding: gzip,deflate"'
+
+function progress { 
+  ps -ef | grep $1
+}
+
+alias vs-code='open -a "Visual Studio Code"'

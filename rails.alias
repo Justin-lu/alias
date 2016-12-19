@@ -16,7 +16,7 @@ alias rake-seed-fu="re db:seed_fu"
 alias rake-drop-db="re db:drop"
 alias rake-time-zones="re time:zones:all"
 alias rake-assets-precomplie="RAILS_ENV=production rake assets:precompile"
-alias rake-assets-clean="rake assets:clean"
+alias rake-assets-clean="RAILS_ENV=production rake assets:clean"
 alias rails-s-production='LOCAL_PRODUCTION=1 rails s -e production --debugger -p 3003 --pid=tmp/pids/server_production.pid'
 alias start-postgres='killall postgres; postgres -D /usr/local/var/postgres'
 
