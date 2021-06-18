@@ -31,7 +31,7 @@ function git-new-branch {
 
 function git-push-current-branch-to-remote {
   branch_name=`git-current-branch`
-  tn git push origin $branch_name
+  git push origin $branch_name
   say Done
   git branch --set-upstream-to=origin/$branch_name $branch_name
 }
